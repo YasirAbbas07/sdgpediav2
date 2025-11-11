@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGpedia - All Goals</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00a65a',
+                        secondary: '#2980b9',
+                        accent: '#f39c12'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 w-full h-screen overflow-hidden">
+<custom-navbar></custom-navbar>
+    <main class="container mx-auto px-4 py-12">
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-6">
+                The 17 Sustainable Development Goals
+            </h1>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">Click on any goal to explore its targets and indicators</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="chatbot.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-medium hover:opacity-90 transition shadow-lg transform hover:scale-105">
+                    <i data-feather="message-square" class="mr-2"></i>
+                    Chat with AI Assistant
+                </a>
+                <a href="#sdg-grid" class="inline-flex items-center px-6 py-3 bg-white text-primary border-2 border-primary rounded-full font-medium hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
+                    <i data-feather="grid" class="mr-2"></i>
+                    View All Goals
+                </a>
+            </div>
+        </section>
+
+        <section id="sdg-grid" class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl -z-10"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- All 17 SDG Cards -->
+                <sdg-card 
+                    goal-number="1" 
+                    title="No Poverty" 
+                    description="End poverty in all its forms everywhere"
+                    color="red">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="2" 
+                    title="Zero Hunger" 
+                    description="End hunger, achieve food security"
+                    color="orange">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="3" 
+                    title="Good Health" 
+                    description="Ensure healthy lives for all"
+                    color="yellow">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="4" 
+                    title="Quality Education" 
+                    description="Inclusive and equitable education"
+                    color="green">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="5" 
+                    title="Gender Equality" 
+                    description="Empower all women and girls"
+                    color="purple">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="6" 
+                    title="Clean Water" 
+                    description="Water and sanitation for all"
+                    color="blue">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="7" 
+                    title="Affordable Energy" 
+                    description="Reliable sustainable energy"
+                    color="indigo">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="8" 
+                    title="Decent Work" 
+                    description="Inclusive economic growth"
+                    color="red">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="9" 
+                    title="Innovation" 
+                    description="Resilient infrastructure"
+                    color="orange">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="10" 
+                    title="Reduced Inequality" 
+                    description="Within and among countries"
+                    color="yellow">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="11" 
+                    title="Sustainable Cities" 
+                    description="Safe resilient urban spaces"
+                    color="green">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="12" 
+                    title="Responsible Consumption" 
+                    description="Sustainable production patterns"
+                    color="purple">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="13" 
+                    title="Climate Action" 
+                    description="Combat climate change"
+                    color="blue">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="14" 
+                    title="Life Below Water" 
+                    description="Conserve marine resources"
+                    color="indigo">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="15" 
+                    title="Life on Land" 
+                    description="Protect terrestrial ecosystems"
+                    color="red">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="16" 
+                    title="Peace and Justice" 
+                    description="Inclusive societies"
+                    color="orange">
+                </sdg-card>
+
+                <sdg-card 
+                    goal-number="17" 
+                    title="Partnerships" 
+                    description="Global collaboration"
+                    color="yellow">
+                </sdg-card>
+            </div>
+        </section>
+
+        <section class="mt-24 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">How Can You Contribute?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="book-open" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Educate Yourself</h3>
+                    <p class="text-gray-600">Learn about the SDGs and their importance for our global future.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="heart" class="text-secondary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Take Action</h3>
+                    <p class="text-gray-600">Make sustainable choices in your daily life and community.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i data-feather="share-2" class="text-accent w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Spread Awareness</h3>
+                    <p class="text-gray-600">Share knowledge about the SDGs with friends and family.</p>
+                </div>
+            </div>
+            <a href="chatbot.html" class="inline-flex items-center px-8 py-4 mt-10 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold hover:opacity-90 transition shadow-xl transform hover:scale-105">
+                <i data-feather="arrow-right" class="mr-2"></i>
+                Start Your SDG Journey Now
+            </a>
+        </section>
+    </main>
+<custom-footer></custom-footer>
+    <script>feather.replace();</script>
+    <script src="components/sdg-card.js"></script>
+    <script src="scroll-script.js"></script>
+</body>
+</html>

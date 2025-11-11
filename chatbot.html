@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGpedia - AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-4">SDGpedia AI Assistant</h1>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">Ask me anything about the Sustainable Development Goals</p>
+        </section>
+
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="p-4 border-b border-gray-200 bg-gradient-to-r from-primary to-secondary">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mr-3">
+                        <i data-feather="message-square" class="text-primary"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-white">SDGpedia Bot</h2>
+                </div>
+            </div>
+
+            <div id="chat-container" class="h-96 overflow-y-auto p-4 space-y-4">
+                <div class="flex justify-start">
+                    <div class="max-w-xs md:max-w-md bg-gray-100 rounded-lg p-3">
+                        <p>Hello! I'm here to help you learn about the Sustainable Development Goals. What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-gray-200">
+                <div class="flex">
+                    <input type="text" id="user-input" placeholder="Type your question here..." 
+                        class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button id="send-btn" class="px-4 py-2 bg-primary text-white rounded-r-lg hover:bg-secondary transition">
+                        <i data-feather="send"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script>
+        feather.replace();
+        document.getElementById('send-btn').addEventListener('click', sendMessage);
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user message to chat
+            addMessage(message, 'user');
+            input.value = '';
+
+            // Simulate bot response
+            setTimeout(() => {
+                addMessage("I'm a simulated response. In a real implementation, this would connect to an AI API.", 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chat = document.getElementById('chat-container');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `max-w-xs md:max-w-md rounded-lg p-3 ${sender === 'user' ? 'bg-primary text-white' : 'bg-gray-100'}`;
+            bubble.innerHTML = `<p>${text}</p>`;
+            
+            messageDiv.appendChild(bubble);
+            chat.appendChild(messageDiv);
+            chat.scrollTop = chat.scrollHeight;
+        }
+    </script>
+</body>
+</html>
