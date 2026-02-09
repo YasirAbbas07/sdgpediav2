@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDGpedia - AI Chatbot</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDGpedia - AI Chatbot</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!-- Custom Components -->
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <custom-navbar></custom-navbar>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-4">SDGpedia AI Assistant</h1>
-            <p class="text-lg text-gray-700 max-w-2xl mx-auto">Ask me anything about the Sustainable Development Goals</p>
-        </section>
+<body class="bg-gray-50 min-h-screen flex flex-col">
 
-        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-            <iframe 
-                src='https://interfaces.zapier.com/embed/chatbot/cmhurleok000rixmjnwhcrfgt' 
-                height='600px' 
-                width='100%' 
-                allow='clipboard-write *' 
-                style="border: none; width: 100%; display: block; height: 600px; min-height: 400px;">
-            </iframe>
-        </div>
-    </main>
+  <!-- Navbar -->
+  <custom-navbar></custom-navbar>
 
-    <custom-footer></custom-footer>
-        <script>
-        feather.replace();
-    </script>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+
+    <!-- Heading -->
+    <section class="text-center mb-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+        SDGpedia AI Assistant 🌍
+      </h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Ask me anything about the 17 United Nations Sustainable Development Goals
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        💡 Try: “What is SDG 13?” or “Quiz me on SDGs”
+      </p>
+    </section>
+
+    <!-- Chatbot Container -->
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+      <iframe
+        src="https://interfaces.zapier.com/embed/chatbot/cmlftp6yh0075otoo0r70pa9e"
+        class="w-full h-[70vh] min-h-[450px] max-h-[750px]"
+        allow="clipboard-write *"
+        style="border: none;"
+        loading="lazy"
+      >
+        <p class="p-4 text-gray-600">
+          The SDG Pedia Bot could not be loaded. Please check your internet connection.
+        </p>
+      </iframe>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <custom-footer></custom-footer>
+
+  <!-- Feather Icons Init -->
+  <script>
+    feather.replace();
+  </script>
+
 </body>
 </html>
